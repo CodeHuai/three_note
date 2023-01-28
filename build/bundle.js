@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./02安装/index.js":
-/*!***********************!*\
-  !*** ./02安装/index.js ***!
-  \***********************/
+/***/ "./03helloCube/helloCube.js":
+/*!**********************************!*\
+  !*** ./03helloCube/helloCube.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\n// 渲染器\r\nconst renderer = new three__WEBPACK_IMPORTED_MODULE_0__.WebGLRenderer()\r\nrenderer.setSize(document.body.clientWidth, document.body.clientHeight)\r\ndocument.body.appendChild(renderer.domElement)\r\n\r\n\r\n// 摄像机\r\nconst camera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera(45, document.body.clientWidth/document.body.clientHeight, 1, 500)\r\ncamera.position.set(0, 0, 100)\r\ncamera.lookAt(0, 0, 0)\r\n\r\n// 场景\r\nconst scene = new three__WEBPACK_IMPORTED_MODULE_0__.Scene()\r\n\r\n\r\n//create a blue LineBasicMaterial\r\nconst material = new three__WEBPACK_IMPORTED_MODULE_0__.LineBasicMaterial( { color: 0x0000ff } );\r\nconst points = [];\r\npoints.push( new three__WEBPACK_IMPORTED_MODULE_0__.Vector3( - 10, 0, 0 ) );\r\npoints.push( new three__WEBPACK_IMPORTED_MODULE_0__.Vector3( 0, 10, 0 ) );\r\npoints.push( new three__WEBPACK_IMPORTED_MODULE_0__.Vector3( 10, 0, 0 ) );\r\n\r\nconst geometry = new three__WEBPACK_IMPORTED_MODULE_0__.BufferGeometry().setFromPoints( points );\r\nconst line = new three__WEBPACK_IMPORTED_MODULE_0__.Line( geometry, material );\r\n\r\nscene.add( line );\r\nrenderer.render( scene, camera );\r\n\n\n//# sourceURL=webpack://three_note/./02%E5%AE%89%E8%A3%85/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\r\n\r\n\r\n// Three.js需要使用这个canvas标签来绘制，所以我们要先获取它然后传给three.js。\r\nconst cavansDOM = document.querySelector('#c')\r\nconst renderer = new three__WEBPACK_IMPORTED_MODULE_0__.WebGLRenderer({cavansDOM})\r\n\r\n\r\n// 透视摄像机\r\nconst fov = 75;\r\nconst aspect = 2;  // 相机默认值\r\nconst near = 0.1;\r\nconst far = 5;\r\nconst camera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera(fov, aspect, near, far);\r\ncamera.position.z = 2;\r\n\r\n// 场景\r\nconst scene = new three__WEBPACK_IMPORTED_MODULE_0__.Scene();\r\n\r\n// 几何体\r\nconst boxWidth = 1;\r\nconst boxHeight = 1;\r\nconst boxDepth = 1;\r\nconst geometry = new three__WEBPACK_IMPORTED_MODULE_0__.BoxGeometry(boxWidth, boxHeight, boxDepth);\r\n// 设置材质\r\nconst material = new three__WEBPACK_IMPORTED_MODULE_0__.MeshBasicMaterial({color: 0x44aa88});\r\n// 创建一个网格(Mesh)对象，包含了\r\n// 几何体(Geometry)(物体的形状)\r\n// 材质(Material)(如何绘制物体，光滑还是平整，什么颜色，什么贴图等等)\r\n// 对象在场景中相对于他父对象的位置、朝向、和缩放。下面的代码中父对象即为场景对象。\r\nconst cube = new three__WEBPACK_IMPORTED_MODULE_0__.Mesh(geometry, material);\r\n\r\n// 将网格添加到场景中\r\nscene.add(cube);\r\n\r\nrenderer.render(scene, camera);\n\n//# sourceURL=webpack://three_note/./03helloCube/helloCube.js?");
 
 /***/ }),
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./02安装/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./03helloCube/helloCube.js");
 /******/ 	
 /******/ })()
 ;

@@ -2,7 +2,7 @@
 const {resolve} = require('path');
 
 module.exports = {   //所有构建工具都是基于nodejs平台运行的~模块化默认采用commonjs
-  entry: './02安装/index.js',    // 入口起点
+  entry: './03helloCube/helloCube.js',    // 入口起点
   output: {     // 输出
     filename: 'bundle.js',     // 输出文件名
     path: resolve(__dirname, 'build')    // 输出路径 , __dirname nodejs的变量，代表当前文件的目录绝对路径， <a href="https://juejin.im/post/5cb341596fb9a068553e1818" rel="noopener">https://juejin.im/post/5cb341596fb9a068553e1818</a>
