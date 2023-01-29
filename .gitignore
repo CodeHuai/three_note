@@ -1,6 +1,6 @@
 ###需要过滤的文件夹或者文件###
-.idea　　　　
-.mvn　　　　
+.idea
+.mvn
 .iml
 mvnw
 mvnw.cmd
