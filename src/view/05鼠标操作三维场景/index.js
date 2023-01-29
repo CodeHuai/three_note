@@ -39,5 +39,5 @@ function render() {
   renderer.render(scene,camera);//执行渲染操作
 }
 render();
-var controls = new OrbitControls( camera, renderer.domElement );
+const controls = new OrbitControls( camera, renderer.domElement );
 controls.addEventListener('change', render);//监听鼠标、键盘事件
