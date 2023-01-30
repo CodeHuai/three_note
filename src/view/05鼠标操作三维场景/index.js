@@ -2,8 +2,13 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
+
+
 // Three.js需要使用这个canvas标签来绘制，所以我们要先获取它然后传给three.js。
-const canvas = document.querySelector('#c');
+const canvas = document.createElement('canvas')
+canvas.style.width = '100%'
+canvas.style.height = '100%'
+document.body.append(canvas)
 const renderer = new THREE.WebGLRenderer({canvas});
 
 
